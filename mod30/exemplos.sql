@@ -3,6 +3,7 @@ create table tb_cliente (
 	id bigint,
 	nome varchar(50) not null,
 	cpf bigint not null,
+	idade int not null,
 	tel bigint not null,
 	endereco varchar(50) not null,
 	numero bigint not null,
@@ -14,6 +15,7 @@ create table tb_cliente (
 
 create table tb_produto(
 	id bigint,
+	origem varchar (2) not null,
 	codigo varchar(10) not null,
 	nome varchar(50) not null,
 	descricao varchar(100) not null,

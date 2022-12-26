@@ -50,6 +50,7 @@ public class ProdutoDAOTest {
 	private Produto criarProduto(String codigo) throws TipoChaveNaoEncontradaException, DAOException {
 		Produto produto = new Produto();
 		produto.setCodigo(codigo);
+		produto.setOrigem("AM");
 		produto.setDescricao("Produto 1");
 		produto.setNome("Produto 1");
 		produto.setValor(BigDecimal.TEN);

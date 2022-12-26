@@ -23,7 +23,10 @@ public class Produto implements Persistente {
 	@TipoChave("getCodigo")
 	@ColunaTabela(dbName = "codigo", setJavaName = "setCodigo")
 	private String codigo;
-	
+
+	@ColunaTabela(dbName = "origem", setJavaName = "setOrigem")
+	private String origem;
+
 	@ColunaTabela(dbName = "nome", setJavaName = "setNome")
 	private String nome;
 	
@@ -36,7 +39,6 @@ public class Produto implements Persistente {
 	public String getCodigo() {
 		return codigo;
 	}
-
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
@@ -44,7 +46,6 @@ public class Produto implements Persistente {
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -52,7 +53,6 @@ public class Produto implements Persistente {
 	public String getDescricao() {
 		return descricao;
 	}
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
@@ -60,7 +60,6 @@ public class Produto implements Persistente {
 	public BigDecimal getValor() {
 		return valor;
 	}
-
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
@@ -68,9 +67,10 @@ public class Produto implements Persistente {
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
+	public String getOrigem() {return origem;}
+	public void setOrigem(String origem) {this.origem = origem;}
 }

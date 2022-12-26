@@ -28,6 +28,7 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 	public void atualiarDados(Cliente entity, Cliente entityCadastrado) {
 		entityCadastrado.setCidade(entity.getCidade());
 		entityCadastrado.setCpf(entity.getCpf());
+		entityCadastrado.setIdade(entity.getIdade());
 		entityCadastrado.setEnd(entity.getEnd());
 		entityCadastrado.setEstado(entity.getEstado());
 		entityCadastrado.setNome(entity.getNome());
@@ -40,7 +41,7 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 	protected String getQueryInsercao() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO TB_CLIENTE ");
-		sb.append("(ID, NOME, CPF, TEL, ENDERECO, NUMERO, CIDADE, ESTADO)");
+		sb.append("(ID, NOME, CPF, IDADE, TEL, ENDERECO, NUMERO, CIDADE, ESTADO)");
 		sb.append("VALUES (nextval('sq_cliente'),?,?,?,?,?,?,?)");
 		return sb.toString();
 	}
@@ -49,11 +50,12 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 	protected void setParametrosQueryInsercao(PreparedStatement stmInsert, Cliente entity) throws SQLException {
 		stmInsert.setString(1, entity.getNome());
 		stmInsert.setLong(2, entity.getCpf());
-		stmInsert.setLong(3, entity.getTel());
-		stmInsert.setString(4, entity.getEnd());
-		stmInsert.setLong(5, entity.getNumero());
-		stmInsert.setString(6, entity.getCidade());
-		stmInsert.setString(7, entity.getEstado());
+		stmInsert.setLong(3, entity.getIdade());
+		stmInsert.setLong(4, entity.getTel());
+		stmInsert.setString(5, entity.getEnd());
+		stmInsert.setLong(6, entity.getNumero());
+		stmInsert.setString(7, entity.getCidade());
+		stmInsert.setString(8, entity.getEstado());
 		
 	}
 
@@ -72,12 +74,13 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 		StringBuilder sb = new StringBuilder();
 		sb.append("UPDATE TB_CLIENTE ");
 		sb.append("SET NOME = ?,");
+		sb.append("SET IDADE = ?,");
 		sb.append("TEL = ?,");
 		sb.append("ENDERECO = ?,");
 		sb.append("NUMERO = ?,");
 		sb.append("CIDADE = ?,");
 		sb.append("ESTADO = ?");
-		sb.append("WHERE CPF = ? ");
+		sb.append(" WHERE CPF = ?");
 		return sb.toString();
 	}
 
@@ -90,6 +93,7 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 		stmUpdate.setString(5, entity.getCidade());
 		stmUpdate.setString(6, entity.getEstado());
 		stmUpdate.setLong(7, entity.getCpf());
+		stmUpdate.setLong(8, entity.getIdade());
 	}
 
 	@Override
