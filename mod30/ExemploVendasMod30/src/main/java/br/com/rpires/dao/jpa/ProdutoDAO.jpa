@@ -1,0 +1,13 @@
+
+package br.com.rpires.dao.jpa;
+
+import br.com.rpires.dao.generic.jpa.GenericPSTG1DAO;
+import br.com.rpires.domain.jpa.ProdutoJpa;
+
+public class ProdutoDAO extends GenericPSTG1DAO<ProdutoJpa, Long> implements IProdutoDAO {
+
+	public ProdutoDAO() {
+		super(ProdutoJpa.class);
+	}
+
+}

@@ -1,0 +1,14 @@
+package br.com.rpires.dao.generic.jpa;
+
+import java.io.Serializable;
+
+import br.com.rpires.domain.jpa.Persistente;
+
+public abstract class GenericPSTG1DAO <T extends Persistente, E extends Serializable>
+	extends GenericDAO<T,E> {
+
+	public GenericPSTG1DAO(Class<T> persistenteClass) {
+		super(persistenteClass, "Postgre1");
+	}
+
+}

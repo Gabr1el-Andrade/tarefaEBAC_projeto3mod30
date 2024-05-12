@@ -1,0 +1,16 @@
+
+package br.com.rpires.dao.jpa;
+
+import br.com.rpires.dao.generic.jpa.IGenericDAO;
+import br.com.rpires.domain.jpa.VendaJpa;
+import br.com.rpires.exceptions.DAOException;
+import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+
+public interface IVendaDAO extends IGenericDAO<VendaJpa, Long>{
+
+	public void finalizarVenda(VendaJpa venda) throws TipoChaveNaoEncontradaException, DAOException;
+	
+	public void cancelarVenda(VendaJpa venda) throws TipoChaveNaoEncontradaException, DAOException;
+
+	public VendaJpa consultarComCollection(Long id);
+}

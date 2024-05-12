@@ -1,0 +1,14 @@
+
+package br.com.rpires.dao.jpa;
+
+import br.com.rpires.dao.generic.jpa.GenericJpaDB2DAO;
+import br.com.rpires.domain.jpa.ClienteJpa;
+
+
+public class ClientePSTG2DAO extends GenericPSTG2DAO<ClienteJpa, Long> implements IClienteDAO<ClienteJpa> {
+
+	public ClientePSTG2DAO() {
+		super(ClienteJpa.class);
+	}
+
+}

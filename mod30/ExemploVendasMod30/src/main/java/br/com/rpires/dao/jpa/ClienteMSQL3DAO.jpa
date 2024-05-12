@@ -1,0 +1,14 @@
+
+package br.com.rpires.dao.jpa;
+
+import br.com.rpires.dao.generic.jpa.GenericJpaDB3DAO;
+import br.com.rpires.domain.jpa.ClienteJpa2;
+
+
+public class ClienteMSQL3DAO extends ClienteMSQL3DAO<ClienteJpa2, Long> implements IClienteDAO<ClienteJpa2> {
+
+	public ClienteMSQL3DAO() {
+		super(ClienteJpa2.class);
+	}
+
+}
