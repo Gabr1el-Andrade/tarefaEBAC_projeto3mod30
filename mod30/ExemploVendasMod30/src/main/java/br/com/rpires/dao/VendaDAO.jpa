@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package br.com.rpires.dao;
 
 import java.sql.Connection;
@@ -26,10 +24,6 @@ import br.com.rpires.exceptions.MaisDeUmRegistroException;
 import br.com.rpires.exceptions.TableException;
 import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
 
-/**
- * @author rodrigo.pires
- *
- */
 public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 	
 
@@ -135,13 +129,8 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 
 	@Override
 	public Venda consultar(String valor) throws MaisDeUmRegistroException, TableException, DAOException {
-		//TODO pode ser feito desta forma
-//		Venda venda = super.consultar(valor);
-//		Cliente cliente = clienteDAO.consultar(venda.getCliente().getId());
-//		venda.setCliente(cliente);
-//		return venda;
-		
-		//TODO Ou pode ser feito com join
+	return venda;
+
 		StringBuilder sb = sqlBaseSelect();
 		sb.append("WHERE V.CODIGO = ? ");
 		Connection connection = null;
